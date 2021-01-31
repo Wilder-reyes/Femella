@@ -1,5 +1,6 @@
 package com.example.snowman;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,18 @@ public class LoginTabFragment  extends Fragment {
         forget.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(500).start();
         button.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(700).start();
 
+        button = root.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), choose.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
+
     }
+
+
 }
